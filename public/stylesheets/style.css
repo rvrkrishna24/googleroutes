@@ -1,0 +1,12 @@
+.pageStyle{
+	width: 1024px;
+	height: 50px;
+}
+#mapStyle{
+	width: 950px;
+	height: 500px;
+}
+.routeDisplay {
+	height: 450px;
+	overflow-y: auto;
+}

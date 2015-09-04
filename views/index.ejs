@@ -1,0 +1,35 @@
+<!doctype html>	
+
+<html ng-app="googleRouteApp">
+	<head>
+	    <% include partials/head %>
+	</head>
+	
+	<body ng-controller="mapCtrl">	
+		<center>
+			<div class= "alert alert-info">
+     			<h3>Google Route Map</h3>
+			</div>
+		</center>
+		<div class="col-md-9">
+			<div class="">				
+				<div>
+					<map id="mapStyle" zoom="13" center="{{latlng || [12.969329, 77.593279]}}"></map>
+				</div>
+				
+				<div ng-init='isItDisabled=false'> 									
+					<button class="btn btn-primary col-md-2" ng-click="start()" ng-disabled='isItDisabled'>Start</button>
+					<button class="btn btn-warning col-md-2" ng-click="reset()">Reset</button>					
+				</div>			
+			</div>
+		</div>
+		<div class="col-md-3" ng-show="locationArr.length">
+			<h3 class="text-center text-primary"><b>ROUTE-POINTS</b></h3>
+			<div class="routeDisplay">
+				<li class="list-group-item" ng-class="{'active': $last}" ng-repeat="loc in locationArr">
+					<i id="{{ loc.name.split(',')[0] }}">{{ $index+1 }} . {{ loc.name}}</i>
+				</li>
+			</div>
+		</div>
+	</body>
+</html>
